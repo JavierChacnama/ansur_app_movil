@@ -2,6 +2,7 @@ import 'package:ansur_app_movil/models/productos.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/squar_avatar.dart';
+import 'package:ansur_app_movil/views/shopping_cart_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
