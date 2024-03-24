@@ -25,6 +25,16 @@ class HomeScreen extends StatelessWidget {
         centerTitle: false,
       ),
       body: _Body()
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const ShoppingCartScreen(), 
+            ),
+          );
+        },
+        child: const Icon(Icons.shopping_cart_outlined),
+      ),
     );
   }
 }
