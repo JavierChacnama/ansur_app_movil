@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ansur_app_movil/models/productos.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   const ShoppingCartScreen({super.key});
@@ -9,7 +10,25 @@ class ShoppingCartScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Carrito de compras'),
       ),
-      body: const Placeholder(),
+      body: Expanded(
+          child: ListView.builder(
+            itemCount: productos.length,
+            itemBuilder: (BuildContext context, int index) { 
+            return Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    //leading: SquarAvatar(producto: productos[index].image),
+                    title: Text(productos[index].name),
+                    subtitle: Text(productos[index].marca+' - '+productos[index].unidad),
+                    trailing: Text('S/. ${productos[index].precio}'),
+                  )
+                ],
+              ),
+            );
+           },),
+        ),
     );
   }
 }
