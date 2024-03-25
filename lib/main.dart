@@ -1,19 +1,35 @@
+import 'package:ansur_app_movil/product_builder.dart';
 import 'package:ansur_app_movil/theme/app_theme.dart';
+
+
+import 'package:ansur_app_movil/utils/router_generator.dart';
+
 import 'package:flutter/material.dart';
 
-import 'views/home_screen.dart';
+import 'package:provider/provider.dart';
+
+
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ansur app',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme().theme(),
-      home: const HomeScreen()
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ProductBuilder.builder()),
+      ],
+      child:  MaterialApp(
+        title: 'Ansur app',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().theme(),
+        initialRoute: '/',
+        onGenerateRoute: RouterGenerator.generateRoute,
+      ),
     );
   }
 }
+
+

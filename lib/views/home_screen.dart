@@ -1,16 +1,25 @@
 import 'package:ansur_app_movil/models/productos.dart';
+import 'package:ansur_app_movil/view_models/product_view_model.dart';
+import 'package:ansur_app_movil/views/products_list.dart';
+import 'package:ansur_app_movil/views/shopping_cart_screen';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'widgets/squar_avatar.dart';
-import 'package:ansur_app_movil/views/shopping_cart_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
   });
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    ProductViewModel productViewModel=context.watch<ProductViewModel>();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -25,7 +34,7 @@ class HomeScreen extends StatelessWidget {
         
         centerTitle: false,
       ),
-      body: _Body()
+      body: _body2(productViewModel),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.of(context).push(
@@ -38,6 +47,44 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+
+_body2(ProductViewModel productViewModel) {
+
+    return Column(
+      children: [
+        const SizedBox(height: 20,),
+        Container(
+          height: 200,
+          color: Colors.cyan,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Text(
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold
+                ),
+                'Lista de productos'
+              ),
+              Image.asset(
+                'assets/images/bodega.png',
+                width: 150
+              ),
+          ],),
+        ),
+        const SizedBox(height: 20,),
+        Expanded(
+          child: ProductsList(
+            productViewModel.productListModel
+          ),
+        ),
+      ],
+    );
+  
 }
 
 class _Body extends StatelessWidget {
