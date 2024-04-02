@@ -1,5 +1,5 @@
 import 'package:ansur_app_movil/views/home_screen.dart';
-import 'package:ansur_app_movil/views/shopping_cart_screen';
+import 'package:ansur_app_movil/views/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
 
 class RouterGenerator {
@@ -8,7 +8,7 @@ class RouterGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      case '/detail':
+      case '/carrito':
         // if (arguments is String)
         return MaterialPageRoute(builder: (_) => const ShoppingCartScreen());
       default:

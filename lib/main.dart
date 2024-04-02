@@ -1,11 +1,7 @@
-import 'package:ansur_app_movil/product_builder.dart';
+import 'package:ansur_app_movil/utils/products_builder.dart';
 import 'package:ansur_app_movil/theme/app_theme.dart';
-
-
 import 'package:ansur_app_movil/utils/router_generator.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 
@@ -19,7 +15,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ProductBuilder.builder()),
+        ChangeNotifierProvider(create: (_) => ProductsBuilder.builder()),
       ],
       child:  MaterialApp(
         title: 'Ansur app',

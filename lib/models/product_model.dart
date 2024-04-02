@@ -2,13 +2,15 @@ import 'package:ansur_app_movil/utils/constants.dart';
 
 class ProductModel{
   String identifier;
+  String slug;
   String title;
   String description;
-  String price;
-  String stock;
+  double price;
+  int stock;
 
   ProductModel({
     required this.identifier,
+    required this.slug,
     required this.title,
     required this.description,
     required this.price,
@@ -16,6 +18,7 @@ class ProductModel{
   });
 
     ProductModel.newProduct({
+    required this.slug,
     required this.title,
     required this.description,
     required this.price,
@@ -25,17 +28,19 @@ class ProductModel{
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
       identifier: json['id'] as String,
+      slug: json['slug'] as String,
       title: json['name'] as String,
       description: json['description'] as String,
-      price: json['price'] as String,
-      stock: json['stock'] as String,
+      price: json['price'].toDouble() as double,
+      stock: json['stock']
     );
   }
 
   Map<String, dynamic> toJson() => {
+        'slug': slug,
         'name': title,
         'description': description,
-        'price': price,
-        'stock':stock,
+        // 'price': price,
+        // 'stock':stock,
       };
 }

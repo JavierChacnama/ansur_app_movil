@@ -8,8 +8,17 @@ class AppTheme{
             scaffoldBackgroundColor: const Color(0xFFEDEBEB),
             appBarTheme: const AppBarTheme(
                 elevation: 1,
-                centerTitle: true,
+                centerTitle: false,
                 backgroundColor: Color(0xFFEC3138),
+                titleTextStyle: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold                 
+                ),
+                iconTheme: IconThemeData(
+                  color: Colors.white
+                )
             ) //AppBarTheme
         ); //ThemeData
     }

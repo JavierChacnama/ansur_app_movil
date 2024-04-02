@@ -1,0 +1,17 @@
+[
+    {
+        "id": "001",
+        "title": "Desarrollo de aplicaciones moviles",
+        "category": "movil"
+    },
+    {
+        "id": "002",
+        "title": "Desarrollo de aplicaciones web",
+        "category": "web"
+    },
+    {
+        "id": "003",
+        "title": "Desarrollo de aplicaciones cloud",
+        "category": "cloud"
+    }
+]
