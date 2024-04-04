@@ -12,6 +12,12 @@ class ShoppingCartScreen extends StatefulWidget {
 }
 
 class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
+
+  _navigateToShoppingData(BuildContext context) {
+    // Navigator.of(context).pushNamed('/detail', arguments: );
+    Navigator.of(context).pushNamed('/datos-compra');
+  }  
+  
   @override
   Widget build(BuildContext context) {
     ProductsViewModel productsViewModel=context.watch<ProductsViewModel>();
@@ -62,6 +68,13 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
               Text('20', style: TextStyle(fontSize: 18),),
             ],
           ),
+        ),
+        const SizedBox(height: 10),
+        ElevatedButton(
+          child: const Text('Proceder con la compra'),
+          onPressed: () {
+            _navigateToShoppingData(context);
+          },
         ),
       ],
     );

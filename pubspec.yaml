@@ -69,6 +69,8 @@ flutter:
     - assets/images/arroz.jpg
     - assets/images/azucar.jpg
     - assets/images/leche.jpg
+    - assets/images/camera.png
+    - assets/images/map.png
 
   fonts:
     - family: Inter

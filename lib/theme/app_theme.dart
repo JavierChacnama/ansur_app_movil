@@ -19,7 +19,16 @@ class AppTheme{
                 iconTheme: IconThemeData(
                   color: Colors.white
                 )
-            ) //AppBarTheme
-        ); //ThemeData
+            ),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: const Color(0xFFEC3138),
+                textStyle: const TextStyle(
+                  fontWeight: FontWeight.bold
+                )
+              )
+            ),
+        );
     }
 }

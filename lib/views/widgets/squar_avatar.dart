@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class SquarAvatar extends StatelessWidget {
   const SquarAvatar({
-    super.key, required this.producto,
+    super.key, required this.image,
   });
 
-final String producto;
+final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ final String producto;
       ),
       child: Padding(
         padding: const EdgeInsets.all(5),
-        child: Image.asset(producto),
+        child: Image.asset(image),
       ),
     );
   }
