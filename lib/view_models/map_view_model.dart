@@ -65,7 +65,7 @@ class MapViewModel extends ChangeNotifier {
     var address = await FlutterAddressFromLatLng().getDirectionAddress(
       latitude: latitude,
       longitude: longitude,
-      googleApiKey: 'AIzaSyBi0RBG0vy2X-e9WXW419rNzVyszsIadJI',
+      googleApiKey: 'PEGAR AQUI LA API',
     );
     return address?.formattedAddress;
   }
