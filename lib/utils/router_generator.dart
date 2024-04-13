@@ -1,13 +1,15 @@
+import 'package:ansur_app_movil/models/map_model.dart';
 import 'package:ansur_app_movil/views/camera_screen.dart';
 import 'package:ansur_app_movil/views/home_screen.dart';
 import 'package:ansur_app_movil/views/map_screen.dart';
 import 'package:ansur_app_movil/views/shopping_cart_screen.dart';
 import 'package:ansur_app_movil/views/shopping_data_screen.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 class RouterGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    // final arguments = settings.arguments;
+    final arguments = settings.arguments;
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
@@ -18,11 +20,18 @@ class RouterGenerator {
         // if (arguments is String)
         return MaterialPageRoute(builder: (_) => const ShoppingDataScreen());
       case '/camera':
-        // if (arguments is String)
-        return MaterialPageRoute(builder: (_) => const CameraScreen());
+        if (arguments is List<CameraDescription>) {
+          return MaterialPageRoute(builder: (_) => CameraScreen(cameras: arguments));
+        } else {
+          return _errorRoute();
+        }
       case '/map':
-        // if (arguments is String)
-        return MaterialPageRoute(builder: (_) => const MapScreen());
+        if (arguments is MapModel) {
+          return MaterialPageRoute(
+              builder: (_) => MapScreen(mapModel: arguments));
+        } else {
+          return _errorRoute();
+        }
         
       default:
         return _errorRoute();
