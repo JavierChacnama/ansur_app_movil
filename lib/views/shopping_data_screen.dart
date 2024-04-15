@@ -175,7 +175,7 @@ class _ShoppingDataScreenState extends State<ShoppingDataScreen> {
             TextButton(
               child: const Text('Ir a Inicio'),
               onPressed: () {
-                Navigator.of(context).pushNamed('/');
+                Navigator.of(context).popUntil((route) => route.isFirst);
               },
             ),
           ],
@@ -195,7 +195,7 @@ class _ShoppingDataScreenState extends State<ShoppingDataScreen> {
             TextButton(
               child: const Text('Ir a Inicio'),
               onPressed: () {
-                Navigator.of(context).pushNamed('/');
+                Navigator.of(context).popUntil((route) => route.isFirst);
               },
             ),
           ],
